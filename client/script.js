@@ -32,7 +32,7 @@ socket.on('connect', function() {
 });
 
 socket.on('disconnect', function() {
-    blockUI("Server disconnected. Refresh page to try and reconnect...");
+    blockUI("Serveur déconnecté. Veuillez rafraîchir la page pour essayer de vous reconnecter…");
     //$('.blockOverlay').click($.unblockUI);
 });
 
@@ -45,7 +45,7 @@ function unblockUI() {
 }
 
 function blockUI(message) {
-    message = message || 'Waiting...';
+    message = message || 'En attente…';
 
     $.blockUI({
         message: message,
@@ -149,7 +149,7 @@ function getMessage(m) {
 
         default:
             //unknown message
-            alert('unknown action: ' + JSON.stringify(message));
+            alert('action inconnue : ' + JSON.stringify(message));
             break;
     }
 
@@ -294,7 +294,7 @@ function drawNewCard(id, text, x, y, rot, colour, sticker, animationspeed) {
         submit: 'OK',
         style: 'inherit',
         cssclass: 'card-edit-form',
-        placeholder: 'Double Click to Edit.',
+        placeholder: 'Double cliquez pour m’éditer',
         onblur: 'submit',
         event: 'dblclick', //event: 'mouseover'
     });
@@ -420,7 +420,7 @@ function drawNewColumn(columnName) {
         style: 'inherit',
         cssclass: 'card-edit-form',
         type: 'textarea',
-        placeholder: 'New',
+        placeholder: 'Nouveau',
         onblur: 'submit',
         width: '',
         height: '',
@@ -739,7 +739,7 @@ $(function() {
 
     $('#add-col').click(
         function() {
-            createColumn('New');
+            createColumn('Nouveau');
             return false;
         }
     );
@@ -767,7 +767,7 @@ $(function() {
 
 
     $("#yourname-input").focus(function() {
-        if ($(this).val() == 'unknown') {
+        if ($(this).val() == 'anonyme') {
             $(this).val("");
         }
 
@@ -777,7 +777,7 @@ $(function() {
 
     $("#yourname-input").blur(function() {
         if ($(this).val() === "") {
-            $(this).val('unknown');
+            $(this).val('anonyme');
         }
         $(this).removeClass('focused');
 

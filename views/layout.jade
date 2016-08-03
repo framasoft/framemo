@@ -3,20 +3,22 @@ html(lang="en")
 	head
 
 		<!-- STYLES -->
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
 
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" title="cardsize" href="css/bigcards.css" type="text/css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/framascrum.css" />
 
 		<!-- FONTS -->
-		<link href='//fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-		<link href='//fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+		<link href='css/rock_salt.css' rel='stylesheet' type='text/css'>
+		<link href='css/covered_by_your_grace.css' rel='stylesheet' type='text/css'>
 
 		<!-- SCRIPTS -->
+		<script src="https://framasoft.org/nav/nav.js"></script>
 
 		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+		<script src="lib/jquery-1.11.0.min.js"></script>
+		<script src="lib/jquery-ui.js"></script>
 
 		<!-- External Scripts -->
 		<script src="lib/jquery.ui.touch-punch.min.js"></script>
@@ -33,4 +35,15 @@ html(lang="en")
 		title= locals.pageTitle
 
 	body
-		block body
+		div.container.ombre
+			header(role="banner")
+				h1: a.banner(href="/")
+					span.frama Frama
+					span.services scrum
+				p.lead Mettez vos idées au clair
+				hr.trait(role="presentation")
+
+			main
+				div.row
+					div.col-md-12
+						block body

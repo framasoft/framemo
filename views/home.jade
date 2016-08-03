@@ -3,57 +3,111 @@ html(lang="en")
 	head
 		<!-- SCRIPTS -->
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/framascrum.css" />
 		<!-- FONTS -->
-		<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-		<link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace' rel='stylesheet' type='text/css'>
+		<link href='css/rock_salt.css' rel='stylesheet' type='text/css'>
+		<link href='css/covered_by_your_grace.css' rel='stylesheet' type='text/css'>
+		<!-- NAV -->
+		<script src="https://framasoft.org/nav/nav.js"></script>
 
-		title scrumblr
+		title Framascrum
 
 body
-	h1 scrumblr by <a href="http://aliasaria.ca">aliasaria</a>
+	div.container.ombre
+		header(role="banner")
+			h1
+				span.frama Frama
+				span.services scrum
+			p.lead Mettez vos idées au clair
+			hr.trait(role="presentation")
 
-	div.board-outline
-		div#board
-			div#board-doodles
-
-
-			table#board-table.board-table
-				tr
-					td
-						h1.home scrumblr.
-						form.home(onsubmit="return go();")
-							label name your new board:
-							br
-							input.text(type="text", name="name")
-							a#go(onclick="return go();") &nbsp;go.
-						<br><br>
-						p.home example board:
-						p.home!= '<a href="http://' + locals.url + '/demo">' + locals.url + '/demo</a>'
-						<br><br><br>
-						p.home.small sourcecode at <a href="https://github.com/aliasaria/scrumblr">github</a>
-
-	div.stickers
-		div.sticker#sticker-red
-		div.sticker#sticker-blue
-		div.sticker#sticker-yellow
-		div.sticker#sticker-green
-		br
-		div.sticker#sticker-pink
-		div.sticker#sticker-lightblue
-		div.sticker#sticker-orange
-		div.sticker#sticker-purple
-		br
-		div.sticker#sticker-gold
-		div.sticker#sticker-bluestar
-		div.sticker#sticker-silverstar
-		div.sticker#sticker-redstar
+		main
+			div.row
+				div.col-md-12
+					div.board-outline
+						div#board
+							div#board-doodles
 
 
-	//display # of active users here
-	div.active-connections= "connections: " + connected
+							table#board-table.board-table
+								tr
+									td
+										form.home(onsubmit="return go();")
+											label Nommez votre nouveau tableau :
+											br
+											input.text(type="text", name="name")
+											a#go(onclick="return go();") &nbsp;Allons-y.
+										<br><br>
+										p.home Exemple :
+										p.home!= '<a href="http://' + locals.url + '/demo">' + locals.url + '/demo</a>'
 
-	//<div style="width: 980px; height: 450px; border: solid 2px; opacity:.1; margin-top: 100px"> this will be the backlog that only appears on drag or perhaps not at all</div>
+					div.stickers
+						div.sticker#sticker-red
+						div.sticker#sticker-blue
+						div.sticker#sticker-yellow
+						div.sticker#sticker-green
+						br
+						div.sticker#sticker-pink
+						div.sticker#sticker-lightblue
+						div.sticker#sticker-orange
+						div.sticker#sticker-purple
+						br
+						div.sticker#sticker-gold
+						div.sticker#sticker-bluestar
+						div.sticker#sticker-silverstar
+						div.sticker#sticker-redstar
+
+
+					//display # of active users here
+					div.active-connections= "connexions en cours : " + connected
+
+					//<div style="width: 980px; height: 450px; border: solid 2px; opacity:.1; margin-top: 100px"> this will be the backlog that only appears on drag or perhaps not at all</div>
+			hr(role="presentation")
+			div.row
+				div#tuto-faq.col-md-4
+					h2 Prise en main
+					p.text-center(role="presentation")
+						span.glyphicon.glyphicon-question-sign
+					div#aboutbox
+						p
+							b.violet Frama
+							b.vert scrum
+							span  est un service en ligne libre et minimaliste qui permet d’éditer et d’organiser collaborativement des idées sous forme de post-it
+						ol
+							li Créez un tableau en choisissant son nom (attention, ne choisissez pas un nom trop générique, il risque d’être choisi par d’autres personnes)
+							li Partagez l’adresse de votre tableau avec vos correspondants
+							li Créez de nouvelles notes avec le bouton « Plus » en bas à droite
+							li Déplacez-les en cliquant dessus et en les faisant glisser vers leur destination
+							li Éditez-les en double-cliquant dessus
+							li Collez-y des gommettes de couleur en y glissant les gommettes en bas à droite
+							li Organisez votre tableau avec des colonnes grâce aux boutons qui apparaissent lorsque votre curseur se situe à la droite du tableau (double-cliquez sur le nom d’une colonne pour la renommer
+
+				div#le-logiciel.col-md-4
+					h2 Le logiciel
+					p.text-center(role="presentation")
+						span.glyphicon.glyphicon-cloud
+					p
+						b.violet Frama
+						b.vert scrum
+						span  repose sur le logiciel <a href="https://github.com/aliasaria/scrumblr">Scrumblr</a> développé par Aliasaria.
+					p Scrumblr et ses composants sont <a href="https://github.com/aliasaria/scrumblr/blob/master/LICENSE.txt">sous licence libre</a>.
+					p
+						b.violet Frama
+						b.vert scrum
+						span  requiert l’activation du Javascript pour fonctionner ainsi qu'un navigateur web récent :
+					ul
+						li <a href="http://www.mozilla.org/firefox/">Firefox</a>,
+						li Opera,
+						li Chrome,
+						li Safari…
+					p L’utilisation d’Internet Explorer n’est pas recommandée.
+
+				div#jardin.col-md-4
+					h2 Cultivez votre jardin
+					p.text-center(role="presentation")
+						span.glyphicon.glyphicon-tree-deciduous
+					p Pour participer au développement du logiciel, proposer des améliorations ou simplement le télécharger, rendez-vous sur <a href="https://github.com/aliasaria/scrumblr">le site de développement</a>.
+					p Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi gagner en autonomie, nous vous aidons sur :
+					p.text-center <a href="http://framacloud.org/cultiver-son-jardin/installation-de-scrumblr/" class="btn btn-success"><span class="glyphicon glyphicon-tree-deciduous"></span> framacloud.org</a></p>
 
 	<script type="text/javascript">function go() {var value = document.forms[0].elements["name"].value; value = escape(value); window.location.href = value; return false;}</script>
-
-	<script type="text/javascript">	  var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-2069672-4']);  _gaq.push(['_trackPageview']);   (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })(); </script>

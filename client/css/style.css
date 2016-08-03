@@ -5,10 +5,6 @@ body {
 	font-family: 'Helvetica Neue Light', arial, serif;
 	font-size: 13px;
 	color: #333;
-	background-color: #ddd;
-	xbackground-image: -webkit-gradient(radial, 265 118, 456, 147 0, 29, from(#DDDDDD), to(#f3f3f3));
-
-	padding-left: 10px;
 
 	xheight: 1400px;
 	xwidth: 2000px;
@@ -20,9 +16,6 @@ body {
 	-moz-user-select: none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
-
-	background-image: url('bg/concrete_wall_2_2.png');
-
 }
 
 #board {
@@ -50,7 +43,6 @@ body {
 .board-outline {
 	border: solid #ccc 8px;
 	display: block;
-	width: 996px;
 	height: 466px;
 
 	xmargin-left: auto;
@@ -304,9 +296,8 @@ xopacity: .5;
 }
 
 .stickers {
-	width: 1000px;
 	text-align: right;
-	padding-top: 2px; margin: 0;
+	padding-top: 6px; margin: 0;
 }
 
 
