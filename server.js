@@ -472,20 +472,20 @@ function cleanAndInitializeDemoRoom()
 {
 	// DUMMY DATA
 	db.clearRoom('/demo', function() {
-		db.createColumn( '/demo', 'Not Started' );
-		db.createColumn( '/demo', 'Started' );
-		db.createColumn( '/demo', 'Testing' );
-		db.createColumn( '/demo', 'Review' );
-		db.createColumn( '/demo', 'Complete' );
+		db.createColumn( '/demo', 'Pas commencé' );
+		db.createColumn( '/demo', 'Commencé' );
+		db.createColumn( '/demo', 'En test' );
+		db.createColumn( '/demo', 'Validation' );
+		db.createColumn( '/demo', 'Terminé' );
 
 
-		createCard('/demo', 'card1', 'Hello this is fun', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'yellow');
-		createCard('/demo', 'card2', 'Hello this is a new story.', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'white');
+		createCard('/demo', 'card1', 'Salut, c\'est fun', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'yellow');
+		createCard('/demo', 'card2', 'Salut, c\'est une nouvelle histoire.', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'white');
 		createCard('/demo', 'card3', '.', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'blue');
 		createCard('/demo', 'card4', '.', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'green');
 
-		createCard('/demo', 'card5', 'Hello this is fun', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'yellow');
-		createCard('/demo', 'card6', 'Hello this is a new card.', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'yellow');
+		createCard('/demo', 'card5', 'Salut, c\'est fun', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'yellow');
+		createCard('/demo', 'card6', 'Salut, c\'est un nouveau mémo.', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'yellow');
 		createCard('/demo', 'card7', '.', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'blue');
 		createCard('/demo', 'card8', '.', roundRand(600), roundRand(300), Math.random() * 10 - 5, 'green');
 	});
