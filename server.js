@@ -68,14 +68,14 @@ router.get('/', function(req, res) {
 
 router.get('/demo', function(req, res) {
 	res.render('index.jade', {
-		pageTitle: 'scrumblr - demo',
+		pageTitle: 'Framemo - demo',
 		demo: true
 	});
 });
 
 router.get('/:id', function(req, res){
 	res.render('index.jade', {
-		pageTitle: ('scrumblr - ' + req.params.id)
+		pageTitle: ('Framemo - ' + req.params.id)
 	});
 });
 

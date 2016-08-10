@@ -2,7 +2,7 @@ extends layout
 
 block body
 	- if (locals.demo)
-		div.notice-bar Ceci est un tableau de démonstration. N’y mettez rien d’imortant
+		div.notice-bar Ceci est un tableau de démonstration. N’y mettez rien d’important
 
 	//div.config
 	//	i.fa.fa-cog.fa-lg.faded-icon
@@ -60,3 +60,50 @@ block body
 
 	//div.trash
 	//	i.fa.fa-trash-o.fa-lg.faded-icon
+	hr(role="presentation")
+	div.row
+		div#tuto-faq.col-md-4
+			h2 Prise en main
+			p.text-center(role="presentation")
+				span.glyphicon.glyphicon-question-sign
+			div#aboutbox
+				p
+					b.violet Fra
+					b.vert memo
+					span  est un service en ligne libre et minimaliste qui permet d’éditer et d’organiser collaborativement des idées sous forme de post-it
+				ol
+					li Créez un tableau en choisissant son nom (attention, ne choisissez pas un nom trop générique, il risque d’être choisi par d’autres personnes)
+					li Votre tableau est sauvegardé en temps réel, il vous suffit de partager son adresse web.
+					li Créez une nouvelle note en cliquant sur le (+) à gauche (vous pouvez cliquez plusieurs fois pour en obtenir une d'une couleur différente) et déplacez la sur le tableau. Double-cliquez pour l'éditer.
+					li Déplacez-les en cliquant dessus et en les faisant glisser vers leur destination
+					li Éditez-les en double-cliquant dessus
+					li Les gommettes (à droite) peuvent être placée sur les notes, pour représenter - par exemple - une personne ou une priorité.
+					li Organisez votre tableau avec des colonnes ! Pour ajouter ou supprimer une colonne, cliquez sur les (+) ou (-) qui apparaissent en plaçant votre souris à droite du tableau. Double-cliquez sur le nom d’une colonne pour la renommer
+
+		div#le-logiciel.col-md-4
+			h2 Le logiciel
+			p.text-center(role="presentation")
+				span.glyphicon.glyphicon-cloud
+			p
+				b.violet Fra
+				b.vert memo
+				span  repose sur le logiciel <a href="https://github.com/aliasaria/scrumblr">Scrumblr</a> développé par Ali Asaria.
+			p Scrumblr et ses composants sont <a href="https://github.com/aliasaria/scrumblr/blob/master/LICENSE.txt">sous licence libre</a>.
+			p
+				b.violet Fra
+				b.vert memo
+				span  requiert l’activation du Javascript pour fonctionner ainsi qu'un navigateur web récent :
+			ul
+				li <a href="http://www.mozilla.org/firefox/">Firefox</a>,
+				li Opera,
+				li Chrome,
+				li Safari…
+			p L’utilisation d’Internet Explorer n’est pas recommandée.
+
+		div#jardin.col-md-4
+			h2 Cultivez votre jardin
+			p.text-center(role="presentation")
+				span.glyphicon.glyphicon-tree-deciduous
+			p Pour participer au développement du logiciel, proposer des améliorations ou simplement le télécharger, rendez-vous sur <a href="https://github.com/aliasaria/scrumblr">le site de développement</a>.
+			p Si vous souhaitez installer ce logiciel pour votre propre usage et ainsi gagner en autonomie, nous vous aidons sur :
+			p.text-center <a href="http://framacloud.org/cultiver-son-jardin/installation-de-scrumblr/" class="btn btn-success"><span class="glyphicon glyphicon-tree-deciduous"></span> framacloud.org</a></p>

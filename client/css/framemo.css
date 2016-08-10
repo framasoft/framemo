@@ -18,3 +18,15 @@ h1 a.banner {
     cursor: pointer;
     text-decoration: none;
 }
+.notice-bar {
+    color: #B82E12;
+    opacity: 0.75;
+    text-align: center;
+    margin-left: 0;
+    font-size: 1.3em;
+}
+#marker,
+#eraser,
+.active-connections {
+    display: none;
+}
