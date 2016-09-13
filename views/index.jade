@@ -59,17 +59,18 @@ block body
 		ul#names-ul
 
 	div.export
-		h3 Export board
-		button#export-txt Text format
-		button#export-csv CSV format
-		button#export-json JSON format (for import in Scrumblr)
+		h3 Exporter le tableau
+		button#export-txt.btn.btn-primary Format texte
+		button#export-csv.btn.btn-primary Format CSV
+		button#export-json.btn.btn-primary Format JSON (pour import dans Framemo)
 
 	div.import
-		h3 Import board
-		div
-			label(for="import-input") JSON file to import
-			input(type="file")#import-input
-			button#import-file Import
+		h3 Importer un tableau
+		div.form-inline
+			div.form-group
+				label(for="import-input") fichier JSON à importer
+				input(type="file")#import-input.form-control
+				button#import-file.btn.btn-primary Importer
 
 	//div.trash
 	//	i.fa.fa-trash-o.fa-lg.faded-icon
