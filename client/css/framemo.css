@@ -14,6 +14,13 @@ h1 a.banner {
     font-size: 48px;
     font-weight: bold;
 }
+.content h1, .content h2, .content h3 {
+    font-family: 'Rock Salt', "Arial Rounded MT Bold", arial, serif !important;
+    margin-bottom: 5px;
+}
+.content h3 {
+    font-size: 14px;
+}
 #go {
     cursor: pointer;
     text-decoration: none;
