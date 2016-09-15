@@ -623,3 +623,9 @@ img {
 	padding-top: 0;
 	padding-bottom: 0;
 }
+#revisions-list li > * {
+    cursor: pointer;
+}
+#revisions-list li img {
+    margin-left: 10px;
+}
