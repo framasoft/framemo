@@ -10,6 +10,8 @@ var socket = io.connect({path: baseurl + "/socket.io"});
 
 moment.locale(navigator.language || navigator.languages[0]);
 
+marked.setOptions({sanitize: true});
+
 //an action has happened, send it to the
 //server
 function sendAction(a, d) {
