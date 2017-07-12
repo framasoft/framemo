@@ -966,3 +966,150 @@ $(function() {
         });
     })
 });
+
+/** Doubleclick on mobile + Layout Framemo with tabs **/
+$(document).ready(function(){
+
+    if(window.location.href != window.location.protocol+'//'+window.location.host+'/') { // Not on homepage
+
+        /** Double click on mobile interface **/
+
+        var clickTimer = null;
+        var clickTarget = null;
+        var editTarget = null;
+
+        function doubletapCards( selector ) {
+
+            $(selector+' .stickertarget').addClass('doubletap'); // Escape multi bound
+
+            $(selector+' .doubletap').on('click', function() {
+
+                clickTarget = selector.replace('#','');
+
+                if (clickTimer == null) {
+
+                    clickTimer = setTimeout(function () {
+                        clickTimer = null;
+                    }, 1000)
+
+                } else {
+                    //console.log('doubleclick : '+clickTimer+':'+editTarget);
+                    clearTimeout(clickTimer);
+                    clickTimer = null;
+
+                    if(editTarget == clickTarget && clickTarget !== undefined && clickTarget !== null) {
+                        $('#'+clickTarget.replace('content:','')+' .doubletap').trigger('dblclick');
+                    }
+
+                }
+
+                editTarget = clickTarget;
+
+            });
+        }
+
+        function doubletapTitle( selector ) {
+
+            $(selector).addClass('doubletap'); // Escape multi bound
+
+            $(selector+'.doubletap').on('click', function() {
+
+                clickTarget = selector.replace('#','');
+
+                if (clickTimer == null) {
+
+                    clickTimer = setTimeout(function () {
+                        clickTimer = null;
+                    }, 1000)
+
+                } else {
+                    //console.log('doubleclick : '+clickTimer+':'+editTarget);
+                    clearTimeout(clickTimer);
+                    clickTimer = null;
+
+                    if(editTarget == clickTarget && clickTarget !== undefined && clickTarget !== null) {
+                        $('#'+clickTarget+'.doubletap').trigger('dblclick');
+                    }
+
+                }
+
+                editTarget = clickTarget;
+
+            });
+        }
+
+        setInterval(function() { // Add periodically the doubletap event on new cards
+
+            $('.stickertarget:not(.doubletap)').each(function(){
+                doubletapCards('#'+$(this).attr('id').replace('content:',''));
+            });
+            $('#board-table .col h2:not(.doubletap)').each(function(){
+                doubletapTitle('#'+$(this).attr('id'));
+            });
+
+        }, 500);
+
+        /** Layout Framemo - Tabs **/
+
+        $('.board-outline')
+            .before(
+            '<ul class="nav nav-tabs">'+
+                '<li role="presentation" class="active"><a href="#scrumblr" aria-controls="scrumblr" role="tab" data-toggle="tab"><i class="fa fa-fw fa-lg fa-object-group" aria-hidden="true"></i> Tableau</a></li>'+
+                '<li role="presentation" class="pull-right"><a href="javascript:void(0);" aria-hidden="true" id="full-page"><i class="fa fa-fw fa-lg fa-expand"></i></a></li>'+
+                '<li role="presentation" class="pull-right"><a href="#revisions" aria-controls="revisions" role="tab" data-toggle="tab"><i class="fa fa-fw fa-lg fa-history" aria-hidden="true"></i><span class="sr-only">'+$('.revision h3').text()+'</span></a></li>'+
+                '<li role="presentation" class="pull-right"><a href="#export-import" aria-controls="export-import" role="tab" data-toggle="tab"><i class="fa fa-fw fa-lg fa-exchange" aria-hidden="true"></i><span class="sr-only">'+$('.export h3').text()+'/'+$('.import h3').text()+'</span></a></li>'+
+                '<li role="presentation" class="pull-right"><a href="#about" aria-controls="about" role="tab" data-toggle="tab"><i class="fa fa-fw fa-lg fa-question-circle" aria-hidden="true"></i><span class="sr-only">'+$('#tuto-faq h2').text()+'</span></a></li>'+
+            '</ul>'
+            )
+            .wrap(
+                '<div class="tab-content" style="margin:20px 0"><div role="tabpanel" class="tab-pane active" id="scrumblr"></div></div>'
+            )
+            .css('margin','auto');
+
+        $('.names').css({'margin':'auto','width':'auto'}).addClass('pull-right');
+
+        $('#scrumblr')
+            .append($('.names, .stickers, .buttons'))
+            .after(
+                '<div role="tabpanel" class="tab-pane" id="export-import"></div>'+
+                '<div role="tabpanel" class="tab-pane" id="revisions"></div>'+
+                '<div role="tabpanel" class="tab-pane" id="about"></div>'
+            );
+
+        $('#export-import').append($('.export, .import'));
+        $('#revisions').append($('.revisions'));
+        $('#about').append($('#tuto-faq, #le-logiciel, #jardin'));
+
+        // Style
+        $('#create-card').addClass('vert fa-3x').css('opacity','1');
+        $('#smallify').removeClass('fa-expand').addClass('fa-search-minus').on('click',function(){
+            if (currentTheme == "bigcards") {
+                $(this).removeClass('fa-search-plus').addClass('fa-search-minus');
+            } else {
+                $(this).removeClass('fa-search-minus').addClass('fa-search-plus');
+            }
+        })
+
+        $('#full-page').on('click', function(){
+            if ($('.container.ombre').length) {
+                $(this).children('i').removeClass('fa-expand').addClass('fa-compress');
+                $('.container.ombre').removeClass('container').addClass('container-fluid');
+            } else {
+                $(this).children('i').removeClass('fa-compress').addClass('fa-expand');
+                $('.container-fluid.ombre').removeClass('container-fluid').addClass('container');
+            }
+        })
+
+         $('main hr').hide();
+
+        /** Mode iframe **/
+        if(top.location!=self.document.location) {
+
+            $('#full-page').hide().trigger('click');
+            $('main hr, header').hide();
+
+        }
+
+    }
+
+});
