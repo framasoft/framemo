@@ -45,3 +45,7 @@ h1 a.banner {
 #add-col[style], #delete-col[style] {
     display:inline !important; // No mouvehover effect on mobile
 }
+
+.board-outline {
+    margin: auto;
+}

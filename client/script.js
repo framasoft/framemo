@@ -1050,7 +1050,30 @@ $(document).ready(function(){
         }, 500);
 
         /** Layout Framemo - Tabs **/
+        
+        // Defaut board real size (not 'auto' or 'inherit') saved in database
+        // in order to be able to center it
+        var boardReady = setInterval(function() {
+    
+            if(boardInitialized) {                                    // when board is ready
+                if($('.board-outline').attr('style') === undefined) { // check if size is imported from db
+                    $('.board-outline').css({
+                       'width':$('.board-outline.ui-resizable').width()+16+'px',
+                       'height':'466px'
+                    })
+                    var data= {};
+                    data.size = {
+                        height: 466,
+                        width: $('.board-outline.ui-resizable').width()+16
+                    }
+                    boardResizeHappened("resizestop", data) // using scrumblr function that keep size in db after a resize
+                }
+                clearInterval(boardReady);
+            }
 
+        }, 500);
+
+        // Tabs 
         $('.board-outline')
             .before(
             '<ul class="nav nav-tabs">'+
@@ -1064,7 +1087,6 @@ $(document).ready(function(){
             .wrap(
                 '<div class="tab-content" style="margin:20px 0"><div role="tabpanel" class="tab-pane active" id="scrumblr"></div></div>'
             )
-            //.css('margin','auto');
 
         $('.names').css({'margin':'auto','width':'auto'}).addClass('pull-right');
 
