@@ -1064,7 +1064,7 @@ $(document).ready(function(){
             .wrap(
                 '<div class="tab-content" style="margin:20px 0"><div role="tabpanel" class="tab-pane active" id="scrumblr"></div></div>'
             )
-            .css('margin','auto');
+            //.css('margin','auto');
 
         $('.names').css({'margin':'auto','width':'auto'}).addClass('pull-right');
 
