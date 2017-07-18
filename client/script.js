@@ -917,6 +917,7 @@ $(function() {
     });
 
     $('#export-txt').click(function() {
+        $('.nav-tabs a[href="#scrumblr"]').tab('show');
         socket.json.send({
             action: 'exportTxt',
             data: ($('.col').length !== 0) ? $('.col').css('width').replace('px', '') : null
@@ -924,6 +925,7 @@ $(function() {
     })
 
     $('#export-csv').click(function() {
+        $('.nav-tabs a[href="#scrumblr"]').tab('show');
         socket.json.send({
             action: 'exportCsv',
             data: ($('.col').length !== 0) ? $('.col').css('width').replace('px', '') : null
