@@ -955,7 +955,7 @@ $(function() {
                 data: JSON.parse(text)
             });
         };
-        fr.readAsBinaryString(f);
+        fr.readAsText(f);
     })
 
     $('#create-revision').click(function() {
