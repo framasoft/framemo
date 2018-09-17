@@ -58,6 +58,15 @@ block body
 		span.you-text (vous)
 		ul#names-ul
 
+	div.share
+		h3 Partager le tableau
+		div.form-inline
+			div.input-group
+				input#taburl.form-control(disabled='disabled')
+				div.input-group-addon
+					a#copyurl(href='#', title='Copier l\'adresse du tableau dans votre presse-papier')
+						i.fa.fa-clipboard
+
 	div.export
 		h3 Exporter le tableau
 		button#export-txt.btn.btn-primary Format texte
