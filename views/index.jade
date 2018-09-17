@@ -22,8 +22,16 @@ block body
 
 
 	div.buttons
-		i#create-card.fa.fa-plus-circle.fa-2x.bottom-icon
-		i#smallify.fa.fa-expand.fa-2x.bottom-icon
+		i#create-card.fa.fa-plus-circle.fa-2x.bottom-icon(title='Ajouter une note')
+		i#smallify.fa.fa-expand.fa-2x.bottom-icon(title='Réduire la taille des notes')
+		div.form-group
+			label.control-label(for='choose-card-color') Choisir la couleur de la nouvelle note&nbsp;
+			select#choose-card-color.form-control
+				option(value='random') Couleur au hasard
+				option(value='yellow') Jaune
+				option(value='green') Vert
+				option(value='blue') Bleu
+				option(value='white') Blanc
 
 
 	div.stickers
