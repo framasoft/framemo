@@ -1085,11 +1085,11 @@ $(document).ready(function(){
             .before(
             '<ul class="nav nav-tabs">'+
                 '<li role="presentation" class="active"><a href="#scrumblr" aria-controls="scrumblr" role="tab" data-toggle="tab"><i class="fa fa-fw fa-lg fa-object-group" aria-hidden="true"></i> Tableau</a></li>'+
-                '<li role="presentation" class="pull-right"><a href="javascript:void(0);" aria-hidden="true" id="full-page"><i class="fa fa-fw fa-lg fa-expand"></i></a></li>'+
-                '<li role="presentation" class="pull-right"><a href="#revisions" aria-controls="revisions" role="tab" data-toggle="tab"><i class="fa fa-fw fa-lg fa-history" aria-hidden="true"></i><span class="sr-only">'+$('.revision h3').text()+'</span></a></li>'+
-                '<li role="presentation" class="pull-right"><a href="#share" aria-controls="share" role="tab" data-toggle="tab"><i class="fa fa-fw fa-lg fa-share-alt" aria-hidden="true"></i><span class="sr-only">'+$('.share h3').text()+'</span></a></li>'+
-                '<li role="presentation" class="pull-right"><a href="#export-import" aria-controls="export-import" role="tab" data-toggle="tab"><i class="fa fa-fw fa-lg fa-exchange" aria-hidden="true"></i><span class="sr-only">'+$('.export h3').text()+'/'+$('.import h3').text()+'</span></a></li>'+
-                '<li role="presentation" class="pull-right"><a href="#about" aria-controls="about" role="tab" data-toggle="tab"><i class="fa fa-fw fa-lg fa-question-circle" aria-hidden="true"></i><span class="sr-only">'+$('#tuto-faq h2').text()+'</span></a></li>'+
+                '<li role="presentation" class="pull-right"><a href="javascript:void(0);" aria-hidden="true" id="full-page" title="Plein écran"><i class="fa fa-fw fa-lg fa-expand"></i><span class="sr-only">Plein écran</span></a></li>'+
+                '<li role="presentation" class="pull-right"><a href="#revisions" aria-controls="revisions" role="tab" data-toggle="tab" title="'+$('.revisions h3').text()+'"><i class="fa fa-fw fa-lg fa-history" aria-hidden="true"></i><span class="sr-only">'+$('.revisions h3').text()+'</span></a></li>'+
+                '<li role="presentation" class="pull-right"><a href="#share" aria-controls="share" role="tab" data-toggle="tab" title="'+$('.share h3').text()+'"><i class="fa fa-fw fa-lg fa-share-alt" aria-hidden="true"></i><span class="sr-only">'+$('.share h3').text()+'</span></a></li>'+
+                '<li role="presentation" class="pull-right"><a href="#export-import" aria-controls="export-import" role="tab" data-toggle="tab" title="'+$('.export h3').text()+'/'+$('.import h3').text()+'"><i class="fa fa-fw fa-lg fa-exchange" aria-hidden="true"></i><span class="sr-only">'+$('.export h3').text()+'/'+$('.import h3').text()+'</span></a></li>'+
+                '<li role="presentation" class="pull-right"><a href="#about" aria-controls="about" role="tab" data-toggle="tab" title="'+$('#tuto-faq h2').text()+'"><i class="fa fa-fw fa-lg fa-question-circle" aria-hidden="true"></i><span class="sr-only">'+$('#tuto-faq h2').text()+'</span></a></li>'+
             '</ul>'
             )
             .wrap(
