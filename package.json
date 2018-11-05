@@ -23,5 +23,8 @@
     "simplesets": "~1.2.0",
     "socket.io": "1.x",
     "yargs": "~2.3.0"
+  },
+  "devDependencies": {
+    "forever": "^0.15.3"
   }
 }
