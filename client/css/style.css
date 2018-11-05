@@ -497,19 +497,31 @@ input:hover {
     xbackground: none;
 }
 
+#go:hover {
+	box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, .2);
+}
+
 #go {
-	 background: none;
-    margin-bottom: 10px;
-    border: none;
+	display: inline-block;
+	background-color: #76cfbc;
+	margin-left: 30px;
+	padding: 0 10px 5px 0;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	box-shadow: unset;
+	border: none;
 	font-size: 40px;
 	font-family: 'Covered By Your Grace',"Arial Rounded MT Bold", arial, serif;
 	color: #19ba98;
 	color: black;
 
 	xborder: solid 1px;
+}
 
-
-
+@media (max-width: 442px) {
+	#go {
+		margin-left: 0;
+	}
 }
 
 .notice-bar {
