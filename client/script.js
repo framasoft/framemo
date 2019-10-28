@@ -4,6 +4,7 @@ var columns = [];
 var currentTheme = "bigcards";
 var boardInitialized = false;
 var keyTrap = null;
+var fancyFont = true;
 
 var baseurl = location.pathname.substring(0, location.pathname.lastIndexOf('/'));
 var socket = io.connect({path: baseurl + "/socket.io"});
@@ -184,9 +185,20 @@ $(document).bind('keyup', function(event) {
     keyTrap = event.which;
 });
 
+function fancyFontToggle(event) {
+    event.preventDefault();
+    if (fancyFont) {
+        $(".content").addClass('no-fancy-font');
+    } else {
+        $(".content").removeClass('no-fancy-font');
+    }
+    fancyFont = !fancyFont;
+}
+
 function drawNewCard(id, text, x, y, rot, colour, sticker, animationspeed) {
     //cards[id] = {id: id, text: text, x: x, y: y, rot: rot, colour: colour};
 
+    var noFancyFont = (fancyFont) ? '' : ' no-fancy-font';
     var h = '<div id="' + id + '" class="card ' + colour +
         ' draggable" style="-webkit-transform:rotate(' + rot +
         'deg);\
@@ -195,7 +207,7 @@ function drawNewCard(id, text, x, y, rot, colour, sticker, animationspeed) {
 	<img class="card-image" src="images/' +
         colour + '-card.png">\
 	<div id="content:' + id +
-        '" class="content stickertarget droppable" data-text="">' +
+        '" class="content stickertarget droppable' + noFancyFont + '" data-text="">' +
         marked(text) + '</div><span class="filler"></span>\
 	</div>';
 
@@ -792,8 +804,10 @@ $(function() {
     $("#smallify").click(function() {
         if (currentTheme == "bigcards") {
             changeThemeTo('smallcards');
+            $('#fancyFontControl').addClass('hidden');
         } else if (currentTheme == "smallcards") {
             changeThemeTo('bigcards');
+            $('#fancyFontControl').removeClass('hidden');
         }
         /*else if (currentTheme == "nocards")
 		{
@@ -1142,6 +1156,9 @@ $(document).ready(function(){
 
         }
 
+        // Bind fancyFontToggle checkbox to fancyFontToggle function
+        $('#fancyFontToggle').prop('checked', null);
+        $('#fancyFontToggle').change(fancyFontToggle);
         // put URL in share input
         $('#taburl').val(location);
         // copy URL to clipboard

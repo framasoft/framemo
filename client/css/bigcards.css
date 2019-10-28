@@ -64,6 +64,10 @@
 
 }
 
+.content.no-fancy-font {
+    font-family: "Arial Rounded MT Bold", arial, serif;
+}
+
 .filler {
 	margin-right: 34px;
 	margin-bottom: 42px;
